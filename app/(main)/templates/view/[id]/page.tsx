@@ -46,13 +46,17 @@ const ViewTemplatePage = async ({ params }: { params: { id: string } }) => {
 				<div className='flex gap-2'>
 					{hasUserAnswered && (
 						<Button asChild variant='secondary'>
-							<Link href={`/templates/answered/${params.id}`}>
+							<Link
+								href={`/templates/answered/${params.id}${
+									session?.user?.role === 'ADMIN' ? '/?isAdmin=true' : ''
+								}`}>
 								{t('myFormsButton')}
 							</Link>
 						</Button>
 					)}
 
-					{session?.user?.id === template.author.id && (
+					{(session?.user?.id === template.author.id ||
+						session?.user?.role === 'ADMIN') && (
 						<Button asChild variant='outline'>
 							<Link
 								href={`/templates/manage/${params.id}`}

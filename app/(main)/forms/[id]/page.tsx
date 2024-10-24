@@ -47,6 +47,7 @@ const FormAnswersPage = async ({
 				responses={form?.Response as Response[]}
 				isOwner
 				updateForm
+				isPreview={modifiedBy === 'creator'}
 				modifiedBy={modifiedBy}
 			/>
 		</section>

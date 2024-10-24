@@ -47,6 +47,8 @@ const PublishTemplateButton = ({
 	const [isOpenInvalidCriteria, setIsOpenInvalidCriteria] = useState(false);
 	const [isPending, startTransition] = useTransition();
 	const router = useRouter();
+	// user is the session user, if the user is an admin or the author of the template, they can update it
+	// but the author remains the user that created the template not the admin if it is different
 
 	const handleValidate = () => {
 		const templateErrors: string[] = [];
@@ -85,7 +87,6 @@ const PublishTemplateButton = ({
 					question.answerType === 'checkbox') &&
 				(!question.options || question.options.length < 2)
 			) {
-			
 				questionErrors.push(
 					t('questionValidOptions', { title: question.title })
 				);
@@ -100,9 +101,10 @@ const PublishTemplateButton = ({
 					question.answerType === 'number') &&
 				(!question.correctAnswers || question.correctAnswers.length === 0)
 			) {
-				
 				questionErrors.push(t('questionSetAnswer', { title: question.title }));
-				console.log(t('errorMessage.questionSetAnswer', { title: question.title }));
+				console.log(
+					t('errorMessage.questionSetAnswer', { title: question.title })
+				);
 				isInvalid = true;
 			}
 
@@ -179,7 +181,6 @@ const PublishTemplateButton = ({
 					description,
 					tags,
 					questions,
-					authorId: user?.id || '',
 				});
 
 				toast({

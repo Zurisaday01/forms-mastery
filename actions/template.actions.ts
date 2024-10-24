@@ -68,7 +68,6 @@ export const createTemplate = async ({
 
 export const updateTemplate = async ({
 	templateId,
-	authorId,
 	title,
 	description,
 	tags,
@@ -92,7 +91,6 @@ export const updateTemplate = async ({
 				id: templateId, // Specify the template to update by its ID
 			},
 			data: {
-				authorId: authorId,
 				title,
 				description,
 				// Update the tags by connecting to the existing tags

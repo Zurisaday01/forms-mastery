@@ -84,7 +84,6 @@ declare global {
 	}
 	interface UpdateTemplateProps {
 		templateId: string;
-		authorId: string;
 		title: string;
 		description: string;
 		tags: string[];

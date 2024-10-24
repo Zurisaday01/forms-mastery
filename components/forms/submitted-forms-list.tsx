@@ -1,6 +1,7 @@
 import { getFormsByTemplateId } from '@/actions/form.actions';
 import SubmittedFormCard from './submitted-form-card';
 import { getTranslations } from 'next-intl/server';
+import { auth } from '@/auth';
 
 interface SubmittedFormsListProps {
 	templateId: string;
@@ -8,6 +9,7 @@ interface SubmittedFormsListProps {
 
 const SubmittedFormsList = async ({ templateId }: SubmittedFormsListProps) => {
 	const forms = await getFormsByTemplateId(templateId);
+	const session = await auth();
 	const t = await getTranslations('SubmittedFormsList');
 
 	if (forms.length === 0) return <p>{t('noForms')}</p>;
@@ -20,7 +22,7 @@ const SubmittedFormsList = async ({ templateId }: SubmittedFormsListProps) => {
 					formId={form.id}
 					user={form.user}
 					createdAt={form.createdAt}
-					modifiedBy='creator'
+					modifiedBy={session?.user?.role === 'ADMIN' ? 'user' : 'creator'}
 				/>
 			))}
 		</div>

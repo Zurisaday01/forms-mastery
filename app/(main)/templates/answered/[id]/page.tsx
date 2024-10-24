@@ -3,7 +3,11 @@ import { auth } from '@/auth';
 import SubmittedFormCard from '@/components/forms/submitted-form-card';
 import { getTranslations } from 'next-intl/server';
 
-const AnswersPage = async ({ params }: { params: { id: string } }) => {
+const AnswersPage = async ({
+	params,
+}: {
+	params: { id: string };
+}) => {
 	const session = await auth();
 
 	const t = await getTranslations('AnswersPage');

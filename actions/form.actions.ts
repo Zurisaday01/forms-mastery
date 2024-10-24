@@ -89,6 +89,7 @@ export const updateForm = async ({
 					return await db.response.create({
 						data: {
 							userId: userId, // Store who is answering
+							// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 							formId: form?.id!, // Link the response to the form
 							questionId: answerData.questionId, // Link to the specific question
 							answers: answerData.answers, // Store the user's answers
