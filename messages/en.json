@@ -316,5 +316,15 @@
 	},
 	"UserAvatar": {
 		"guest": "Guest"
+	},
+	"CommentServerActions": {
+		"likeRemoved": "Like removed",
+		"likeAdded": "Like added",
+		"dislikeRemoved": "Dislike removed",
+		"dislikeAdded": "Dislike added"
+	},
+	"TemplateServerActions": {
+		"like": "Like added",
+		"noLike": "Like removed"
 	}
 }

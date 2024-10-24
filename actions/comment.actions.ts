@@ -3,6 +3,7 @@
 import { prisma as db } from '@/lib/prisma';
 import { CreateUpdateCommentSchema } from '@/schema';
 import { Prisma } from '@prisma/client';
+import { getTranslations } from 'next-intl/server';
 import { revalidatePath } from 'next/cache';
 import { cache } from 'react';
 import { z } from 'zod';
@@ -153,6 +154,8 @@ export const getDislikesByCommentId = cache(async (commentId: string) => {
 
 export const toggleCommentLike = async (userId: string, commentId: string) => {
 	try {
+		const t = await getTranslations('CommentServerActions');
+
 		const transaction = await db.$transaction(
 			async (prisma: Prisma.TransactionClient) => {
 				const existingLike = await prisma.like.findFirst({
@@ -196,7 +199,7 @@ export const toggleCommentLike = async (userId: string, commentId: string) => {
 				return {
 					likesCount,
 					dislikesCount,
-					message: existingLike ? 'Like removed' : 'Liked recorded',
+					message: existingLike ? t('likeRemoved') : t('likeAdded'),
 				};
 			}
 		);
@@ -217,6 +220,7 @@ export const toggleCommentDislike = async (
 	commentId: string
 ) => {
 	try {
+		const t = await getTranslations('CommentServerActions');
 		const transaction = await db.$transaction(
 			async (prisma: Prisma.TransactionClient) => {
 				const existingDislike = await prisma.dislike.findFirst({
@@ -260,7 +264,7 @@ export const toggleCommentDislike = async (
 				return {
 					likesCount,
 					dislikesCount,
-					message: existingDislike ? 'Dislike removed' : 'Dislike recorded',
+					message: existingDislike ? t('dislikeRemoved') : t('dislikeAdded'),
 				};
 			}
 		);

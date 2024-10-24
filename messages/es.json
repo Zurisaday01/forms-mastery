@@ -317,5 +317,15 @@
 	},
 	"UserAvatar": {
 		"guest": "Invitado"
+	},
+	"CommentServerActions": {
+		"likeRemoved": "Me gusta eliminado",
+		"likeAdded": "Me gusta añadido",
+		"dislikeRemoved": "No me gusta eliminado",
+		"dislikeAdded": "No me gusta añadido"
+	},
+	"TemplateServerActions": {
+		"like": "Me gusta añadido",
+		"noLike": "Me gusta eliminado"
 	}
 }

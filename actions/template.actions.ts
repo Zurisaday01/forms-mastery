@@ -3,6 +3,7 @@
 import { prisma as db } from '@/lib/prisma';
 import { formatToCamelCase } from '@/lib/utils';
 import { AnswerType, Prisma } from '@prisma/client';
+import { getTranslations } from 'next-intl/server';
 import { revalidatePath } from 'next/cache';
 import { cache } from 'react';
 
@@ -432,6 +433,7 @@ export const toggleTemplateLike = async (
 	templateId: string
 ) => {
 	try {
+		const t = await getTranslations('TemplateServerActions');
 		// Check if the user has already liked the template
 		const existingLike = await db.like.findFirst({
 			where: {
@@ -457,7 +459,7 @@ export const toggleTemplateLike = async (
 
 			revalidatePath('/');
 			revalidatePath('/templates/view/[id]', 'page');
-			return { likesCount, message: 'Unliked template' };
+			return { likesCount, message: t('noLike') };
 		} else {
 			// If like doesn't exist, create a new like
 			await db.like.create({
@@ -475,7 +477,7 @@ export const toggleTemplateLike = async (
 			});
 			revalidatePath('/');
 			revalidatePath('/templates/view/[id]', 'page');
-			return { likesCount, message: 'Liked template' };
+			return { likesCount, message: t('like') };
 		}
 	} catch (error) {
 		console.error('Error toggling like:', error);
