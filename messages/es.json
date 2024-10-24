@@ -1,0 +1,321 @@
+{
+	"HomePage": {
+		"subTitlePopular": "Plantillas más populares",
+		"descriptionPopular": "Los que tienen mayor número de formularios rellenados.",
+		"subTitleLatest": "Últimas plantillas",
+		"descriptionLatest": "Explora las últimas incorporaciones a las plantillas.",
+		"subTitleAll": "Todas las plantillas",
+		"descriptionAll": "Explore la colección completa de plantillas.",
+		"createButton": "Crear Plantilla"
+	},
+	"TemplateCard": {
+		"createdTime": "Creado {message}"
+	},
+	"LocaleSwitcher": {
+		"en": "Inglés",
+		"es": "Español",
+		"label": "Lenguaje"
+	},
+	"Navbar": {
+		"tagCloud": "Búsqueda en la Nube de Etiquetas"
+	},
+	"FullTextSearch": {
+		"placeholder": "Buscar..."
+	},
+	"EngagementMetrics": {
+		"totalForms": "Número Total de Formularios Enviados"
+	},
+	"TemplatesFilter": {
+		"anyone": "Propiedad de cualquiera",
+		"me": "De mi propiedad",
+		"notMe": "No es de mi propiedad",
+		"desc": "Del más nuevo al más antiguo",
+		"asc": "Del más antiguo al más nuevo"
+	},
+	"TemplatesViewPage": {
+		"heading": "Vista Previa de la Plantilla ",
+		"description": "Revise la estructura y el contenido de esta plantilla de formulario antes de comenzar. Esta vista previa le permite ver las preguntas y sus tipos, para que sepa qué esperar al completarla.",
+		"helpTitle": "Instrucciones",
+		"helpDescription": "Esto es lo que puedes hacer en esta página.",
+		"helpMessage": "Si no ha iniciado sesión o no se ha registrado no podrá completar un formulario.",
+		"tagsTitle": "Etiquetas",
+		"noTags": "No hay etiquetas adjuntas",
+		"engagementTitle": "Métricas de participación",
+		"fillFormButton": "Llene un Formulario",
+		"myFormsButton": "Mis Formularios",
+		"mangeButton": "Administrar"
+	},
+	"CommentsSection": {
+		"heading": "Comentarios",
+		"noComments": "No hay comentarios todavía. ¡Sé el primero en comentar!"
+	},
+	"CreateUpdateComment": {
+		"submitButton": "Envíar",
+		"updateButton": "Actualizar",
+		"placeholder": "Escribe un comentario..."
+	},
+	"CommentCard": {
+		"createdTime": "Creado {message}"
+	},
+	"CommentAuthorOptions": {
+		"update": "Actualizar comentario",
+		"delete": "Eliminar comentario"
+	},
+	"CommentUpdateDialog": {
+		"heading": "Actualizar Comentario",
+		"description": "Puedes actualizar tu comentario aquí."
+	},
+	"Toast": {
+		"commentSubmittedTitle": "Tu comentario ha sido enviado",
+		"commentSubmittedDescription": "¡Gracias por tu comentario!",
+		"commentUpdatedTitle": "Tu comentario ha sido actualizado",
+		"signInTitle": "Se requiere iniciar sesión",
+		"signInDescription": "Necesitas iniciar sesión para {feature}.",
+		"errorTitle": "¡Algo salió mal!",
+		"errorAddQuestionTitle": "Solo puedes añadir hasta {number} {label}",
+		"formSubmittedTitle": "Has enviado el formulario con éxito 🎉",
+		"formUpdatedTitle": "Has actualizado el formulario con éxito 🎉",
+		"genericSuccessTitle": "🎉 Éxito",
+		"toolbarUserActionDescription": "Éxito {action} {article} usuario{plural}.",
+		"toolbarUserActionDescriptionError": "Error {action} {article} usuario{plural}.",
+		"templateCreatedSuccessTitle": "Plantilla creada con éxito",
+		"templateUpdatedSuccessTitle": "Plantilla actualizada con éxito",
+		"templateDeletedSuccessTitle": "Tu plantilla ha sido eliminada",
+		"welcome": "Bienvenido a Forms Mastery!",
+		"formRegisterSuccessTitle": "Te has registrado con éxito 🎉"
+	},
+	"CreateTemplatePage": {
+		"helpTitle": "Límite de Tipos de Preguntas",
+		"helpDescription": "Puede agregar varios tipos de preguntas a su formulario con los siguientes límites:",
+		"helpMessageli1": "Hasta 4 preguntas de respuesta corta",
+		"helpMessageli2": "Hasta 4 preguntas de respuesta larga",
+		"helpMessageli3": "Preguntas de respuesta numérica de hasta 4 números",
+		"helpMessageli4": "Hasta 4 preguntas de cuadro de selección",
+		"helpMessageli5": "Hasta 4 preguntas de opción múltiple",
+		"tabQuestions": "Preguntas",
+		"tabTags": "Etiquetas",
+		"tabPreview": "Vista Previa del Formulario"
+	},
+	"HelpModal": {
+		"closeButton": "Cerrar"
+	},
+	"CreateQuestionsContent": {
+		"titlePlaceholder": "Sin título...",
+		"descriptionPlaceholder": "Describe tu plantilla aquí...",
+		"addQuestionButton": "Agregar Pregunta"
+	},
+	"QuestionCard": {
+		"questionPlaceholder": "Pregunta",
+		"descriptionPlaceholder": "Proporcione una breve descripción o cualquier contexto relevante para esta pregunta.",
+		"shortAnswerPlaceholder": "Respuesta Corta",
+		"longAnswerPlaceholder": "Respuesta Larga",
+		"numberAnswerPlaceholder": "Número",
+		"summarySwitch": "Incluir en la Vista Previa",
+		"ratingSwitch": "¿Es calificada?"
+	},
+	"SetTags": {
+		"title": "Seleccionar una etiqueta existente",
+		"createTagButton": "Crear Etiqueta",
+		"createTagTitle": "Agregar una Nueva Etiqueta",
+		"createTagDescription": "Después de crear una nueva etiqueta, estará disponible para que todos los usuarios la utilicen y aparecerá en la lista 'Seleccionar etiqueta existente'."
+	},
+	"MultipleCombox": {
+		"placeholder": "Seleccionar {searchFor}...",
+		"searchPlaceholder": "Buscar opciones...",
+		"noFound": "No se encontró ninguna opción."
+	},
+	"FormPreviewContent": {
+		"untitled": "Sin título...",
+		"noDescription": "No se proporcionó ninguna descripción."
+	},
+	"TemplateForm": {
+		"submitButton": "Envíar",
+		"updateButton": "Actualizar",
+		"noQuestions": "No hay preguntas todavía."
+	},
+	"FormSchemaValidation": {
+		"selectOption": "Debes seleccionar una opción.",
+		"selectAtLeastOneOption": "Debes seleccionar al menos una opción.",
+		"answerRequired": "Se requiere una respuesta."
+	},
+	"RegisterSchemaValidation": {
+		"email": "El correo electrónico es obligatorio.",
+		"password": "La contraseña debe tener al menos 8 caracteres.",
+		"passwordRegex": "La contraseña debe contener una letra mayúscula, una letra minúscula, un número y uno de los siguientes caracteres: * . ! @ $ % &",
+		"firstName": "El nombre es obligatorio.",
+		"lastName": "El apellido es obligatorio."
+	},
+	"LoginSchemaValidation": {
+		"email": "El correo electrónico es obligatorio.",
+		"password": "La contraseña es obligatoria."
+	},
+	"CreateUpdateCommentSchemaValidation": {
+		"content": "El contenido debe tener al menos 10 caracteres."
+	},
+	"QuestionResponseCard": {
+		"noTitle": "Aún no se ha añadido ningún título",
+		"answerPlaceholder": "Tu respuesta",
+		"ratedBadge": "Respuesta será calificada"
+	},
+	"MyTemplatesPage": {
+		"title": "Mis plantillas",
+		"noTemplates": "No tienes ninguna plantilla en este momento."
+	},
+	"AnsweredPage": {
+		"title": "Plantillas con mis respuestas",
+		"noAnswers": "Aún no has contestado ningún formulario."
+	},
+	"UsersPage": {
+		"helpTitle": "Administrar los usuarios",
+		"helpDescription": "Puedes gestionar a los usuarios aquí.",
+		"helpMessage": "Solo puedes administrar los usuarios si eres administrador.",
+		"title": "Usuarios"
+	},
+	"UserDataTable": {
+		"searchLabel": "Buscar por",
+		"page": "Página",
+		"of": "de",
+		"goTo": "Ir a página:",
+		"show": "Mostrar",
+		"previousButton": "Anterior",
+		"nextButton": "Siguiente",
+		"noResults": "No se encontraron resultados",
+		"headerFirstName": "NOMBRE",
+		"headerLastName": "APELLIDO",
+		"headerEmail": "CORREO ELECTRÓNICO",
+		"headerRole": "ROL",
+		"headerStatus": "ESTADO"
+	},
+	"ToolbarUserActions": {
+		"block": "Bloquear",
+		"unblock": "Desbloquear",
+		"changeAdmin": "Cambiar a administrador",
+		"changeNormalUser": "Cambiar a usuario normal",
+		"delete": "Eliminar",
+		"alertMessage": "Esta acción {action} {article} usuario{plural} seleccionado{plural}."
+	},
+	"AlertModal": {
+		"title": "¿Estás seguro?",
+		"cancelButton": "Cancelar",
+		"continueButton": "Continuar",
+		"loading": "Cargando...",
+		"containsCurrentUser": "¡Tu selección contiene tu cuenta!",
+		"changeToNormalMessage": "Si cambias tu rol a usuario normal, ya no podrás gestionar todas las cuentas.",
+		"dangerAction": "Bloquear o eliminar tu cuenta cerrará tu sesión."
+	},
+	"ManageTemplatePage": {
+		"tabResponses": "Respuestas",
+		"tabSubmitted": "Formularios Enviados",
+		"publicButton": "Ir a la Vista Pública"
+	},
+	"AnswersPage": {
+		"title": "Mis Formularios"
+	},
+	"SubmittedFormCard": {
+		"submittedTime": "Enviado {message}",
+		"viewButton": "Ver"
+	},
+	"SubmittedFormsList": {
+		"noForms": "Aún no se han enviado formularios."
+	},
+	"ResponsesContent": {
+		"noResponsesToQuestion": "Aún no hay respuestas para esta pregunta.",
+		"responseLabel": "respuesta"
+	},
+	"DisplayShortAnswers": {
+		"displayBarQuestion": "¿Quieres mostrar las respuestas como un gráfico de barras?"
+	},
+	"BarChart": {
+		"legend": "Conteo"
+	},
+	"ResponsePage": {
+		"description": "Gracias por tu respuesta.",
+		"goToButton": "Ir a la Vista Previa de la Plantilla"
+	},
+	"PublishTemplateButton": {
+		"publishButton": "Publicar",
+		"dialogTitle": "¿Está absolutamente seguro?",
+		"dialogDescription": "Esta plantilla será publicada y estará disponible para que todos la vean.",
+		"cancelButton": "Cancelar",
+		"continueButton": "Continuar",
+		"errorMessage": {
+			"title": "El título es obligatorio.",
+			"description": "La descripción es obligatoria.",
+			"tag": "Se requiere al menos una etiqueta.",
+			"question": "Se requiere al menos una pregunta.",
+			"questionTitle": "Cada pregunta debe tener un título.",
+			"questionDescription": "Cada pregunta debe tener una descripción."
+		},
+		"questionValidOptions": "La pregunta {title} requiere al menos 2 opciones.",
+		"questionSetAnswer": "La pregunta {title} debe tener respuestas correctas establecidas.",
+		"toastError": "Hay algunos problemas con su plantilla.",
+		"toastMoreInfo": "Más información",
+		"dialogMoreInfoTitle": "Criterios de Preguntas Válidas",
+		"dialogMoreInfoDescription": "Para crear una pregunta válida, asegúrese de que cumpla con los siguientes criterios:",
+		"dialogMoreInfoCriteriaBody": "Cumplir con estas reglas le permitirá publicar su plantilla.",
+		"dialogMoreInfoCriteria1": "Título: Cada pregunta debe tener un título claro y descriptivo.",
+		"dialogMoreInfoCriteria2": "Descripción: Una breve descripción debe acompañar a cada pregunta.",
+		"dialogMoreInfoCriteria3": "Opciones: Para opción múltiple o cuadro de selección, proporcione al menos dos opciones.",
+		"dialogMoreInfoCriteria4": "Respuestas Correctas: Si es calificada, especifique las respuestas correctas para tipos de opción múltiple, cuadro de selección o número."
+	},
+	"ModeToggle": {
+		"light": "Claro",
+		"dark": "Oscuro",
+		"system": "Sistema"
+	},
+	"DeleteTemplate": {
+		"title": "Solo para verificar si estás seguro de eliminar esta plantilla.",
+		"description": "Eliminar esta plantilla es irreversible. Una vez que procedas, todos los datos asociados se perderán permanentemente. Por favor, verifica para asegurarte de que esto es lo que deseas hacer.",
+		"cancelButton": "Cancelar",
+		"continueButton": "Continuar",
+		"triggerButton": "Eliminar"
+	},
+	"TagSearchPage": {
+		"title": "Búsqueda en Nube de Etiquetas"
+	},
+	"TemplatesTagList": {
+		"noTemplates": "No se encontraron plantillas",
+		"instruction": "Selecciona un nombre de etiqueta para ver las plantillas asociadas."
+	},
+	"TemplatesList": {
+		"noTemplates": "No se encontraron plantillas"
+	},
+	"WordCloudDialog": {
+		"triggerButton": "Abrir"
+	},
+	"LoadingPage": {
+		"loading": "Cargando..."
+	},
+	"Auth": {
+		"title": "{action} para acceder a todas las funciones",
+		"description": "Usa tu correo electrónico u otro servicio para continuar.",
+		"email": "Correo Electrónico",
+		"password": "Contraseña",
+		"firstName": "Nombre",
+		"lastName": "Apellido",
+		"goToSignUp": "¿No tienes una cuenta?",
+		"goToSignIn": "¿Ya tienes una cuenta?",
+		"signUp": "Registrarse",
+		"signIn": "Iniciar Sesión",
+		"signOut": "Cerrar Sesión",
+		"continueButton": "Continuar",
+		"continueGoogle": "Continuar con Google"
+	},
+
+	"AuthServerActions": {
+		"invalidFields": "¡Campos inválidos!",
+		"register": {
+			"errorEmailTaken": "El correo electrónico ya está en uso",
+			"success": "Has creado una cuenta"
+		},
+		"login": {
+			"errorInvalidCredentials": "¡Credenciales inválidas!",
+			"errorNoPassword": "Inicia sesión con un proveedor de OAuth",
+			"errorBlocked": "¡Tu cuenta ha sido bloqueada!",
+			"errorGeneric": "¡Algo salió mal!"
+		}
+	},
+	"UserAvatar": {
+		"guest": "Invitado"
+	}
+}

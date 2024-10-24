@@ -1,0 +1,320 @@
+{
+	"HomePage": {
+		"subTitlePopular": "Most Popular Templates",
+		"descriptionPopular": "The ones with largest number of filled forms.",
+		"subTitleLatest": "Latest Templates",
+		"descriptionLatest": "Explore the newest additions to the templates.",
+		"subTitleAll": "All Templates",
+		"descriptionAll": "Browse the complete collection of templates.",
+		"createButton": "Create Template"
+	},
+	"TemplateCard": {
+		"createdTime": "Created {message}"
+	},
+	"LocaleSwitcher": {
+		"en": "English",
+		"es": "Spanish",
+		"label": "Language"
+	},
+	"Navbar": {
+		"tagCloud": "Tag Cloud Search"
+	},
+	"FullTextSearch": {
+		"placeholder": "Search..."
+	},
+	"EngagementMetrics": {
+		"totalForms": "Total Number of Forms Submitted"
+	},
+	"TemplatesFilter": {
+		"anyone": "Owned by anyone",
+		"me": "Owned by me",
+		"notMe": "Not owned by me",
+		"desc": "Newest to oldest",
+		"asc": "Oldest to newest"
+	},
+	"TemplatesViewPage": {
+		"heading": "Preview Form Template",
+		"description": "Review the structure and content of this form template before you begin. This preview allows you to see the questions and their types, so you know what to expect when filling it out.",
+		"helpTitle": "Instructions",
+		"helpDescription": "Here is what you can do on this page.",
+		"helpMessage": "If you haven't sign in or sign up you cannot fill out a form.",
+		"tagsTitle": "Tags",
+		"noTags": "No tags attached",
+		"engagementTitle": "Engagement Metrics",
+		"fillFormButton": "Fill out a Form",
+		"myFormsButton": "My Forms",
+		"mangeButton": "Manage"
+	},
+	"CommentsSection": {
+		"heading": "Comments",
+		"noComments": "No comments yet. Be the first to comment!"
+	},
+	"CreateUpdateComment": {
+		"submitButton": "Submit",
+		"updateButton": "Update",
+		"placeholder": "Write a comment..."
+	},
+	"CommentCard": {
+		"createdTime": "Created {message}"
+	},
+	"CommentAuthorOptions": {
+		"update": "Update Comment",
+		"delete": "Delete Comment"
+	},
+	"CommentUpdateDialog": {
+		"heading": "Update Comment",
+		"description": "You can update your comment here."
+	},
+	"Toast": {
+		"commentSubmittedTitle": "Your comment has been submitted",
+		"commentSubmittedDescription": "Thank you for your comment!",
+		"commentUpdatedTitle": "Your comment has been updated",
+		"signInTitle": "Sign In Required",
+		"signInDescription": "You need to sign in to {feature}.",
+		"errorTitle": "⚠️ Something went wrong! 😧",
+		"errorAddQuestionTitle": "You can only add up to {number} {label}",
+		"formSubmittedTitle": "You have successfully submitted the form 🎉",
+		"formUpdatedTitle": "You have successfully updated the form 🎉",
+		"genericSuccessTitle": "🎉 Success",
+		"toolbarUserActionDescription": "Success {action} {article} user{plural}.",
+		"toolbarUserActionDescriptionError": "Error {action} {article} user{plural}.",
+		"templateCreatedSuccessTitle": "Template created successfully",
+		"templateUpdatedSuccessTitle": "Template updated successfully",
+		"templateDeletedSuccessTitle": "Your template has been deleted",
+		"welcome": "Welcome to Forms Mastery!",
+		"formRegisterSuccessTitle": "You have successfully registered 🎉"
+	},
+	"CreateTemplatePage": {
+		"helpTitle": "Question Types Limit",
+		"helpDescription": "You can add several types of questions to your form with the following limits:",
+		"helpMessageli1": "Up to 4 Short Answer questions",
+		"helpMessageli2": "Up to 4 Long Answer questions",
+		"helpMessageli3": "Up to 4 Number Answer questions",
+		"helpMessageli4": "Up to 4 Checkbox questions",
+		"helpMessageli5": "Up to 4 Multiple Choice questions",
+		"tabQuestions": "Questions",
+		"tabTags": "Tags",
+		"tabPreview": "Form Preview"
+	},
+	"HelpModal": {
+		"closeButton": "Close"
+	},
+	"CreateQuestionsContent": {
+		"titlePlaceholder": "Untitled...",
+		"descriptionPlaceholder": "Describe your template here...",
+		"addQuestionButton": "Add Question"
+	},
+	"QuestionCard": {
+		"questionPlaceholder": "Question",
+		"descriptionPlaceholder": "Provide a short description or any relevant context for this question.",
+		"shortAnswerPlaceholder": "Short Answer",
+		"longAnswerPlaceholder": "Long Answer",
+		"numberAnswerPlaceholder": "Number",
+		"summarySwitch": "Include in Summary View",
+		"ratingSwitch": "Is Rated?"
+	},
+	"SetTags": {
+		"title": "Select an existing tag",
+		"createTagButton": "Create Tag",
+		"createTagTitle": "Add a New Tag",
+		"createTagDescription": "After creating a new tag, it will be available for all the users to use and it will be in the 'Select existing tag' list."
+	},
+	"MultipleCombox": {
+		"placeholder": "Select {searchFor}...",
+		"searchPlaceholder": "Search options...",
+		"noFound": "No option found."
+	},
+	"FormPreviewContent": {
+		"untitled": "Untitled...",
+		"noDescription": "No description provided."
+	},
+	"TemplateForm": {
+		"submitButton": "Submit",
+		"updateButton": "Update",
+		"noQuestions": "No questions yet."
+	},
+	"FormSchemaValidation": {
+		"selectOption": "You need to select an option.",
+		"selectAtLeastOneOption": "You have to select at least one option.",
+		"answerRequired": "An answer is required."
+	},
+	"RegisterSchemaValidation": {
+		"email": "Email is required.",
+		"password": "Password must be at least 8 characters",
+		"passwordRegex": "Password must contain one uppercase letter, one lowercase letter, one number and one of the following characters: * . ! @ $ % &",
+		"firstName": "First Name is required.",
+		"lastName": "Last Name is required."
+	},
+	"LoginSchemaValidation": {
+		"email": "Email is required.",
+		"password": "Password is required."
+	},
+	"CreateUpdateCommentSchemaValidation": {
+		"content": "Content must be at least 10 characters."
+	},
+	"QuestionResponseCard": {
+		"noTitle": "No title added yet",
+		"answerPlaceholder": "Your answer",
+		"ratedBadge": "Rated Response"
+	},
+	"MyTemplatesPage": {
+		"title": "My Templates",
+		"noTemplates": "You don't have any templates at the moment."
+	},
+	"AnsweredPage": {
+		"title": "Templates with my answers",
+		"noAnswers": "You haven't answered any form yet."
+	},
+	"UsersPage": {
+		"helpTitle": "Manage the users",
+		"helpDescription": "You can manage the users here.",
+		"helpMessage": "You can only manage the users if you are an admin.",
+		"title": "Users"
+	},
+	"UserDataTable": {
+		"searchLabel": "Search by",
+		"page": "Page",
+		"of": "of",
+		"goTo": "Go to page:",
+		"show": "Show",
+		"previousButton": "Previous",
+		"nextButton": "Next",
+		"noResults": "No results found",
+		"headerFirstName": "FIRST NAME",
+		"headerLastName": "LAST NAME",
+		"headerEmail": "EMAIL",
+		"headerRole": "ROLE",
+		"headerStatus": "STATUS"
+	},
+	"ToolbarUserActions": {
+		"block": "Block",
+		"unblock": "Unblock",
+		"changeAdmin": "Change to admin",
+		"changeNormalUser": "Change to normal user",
+		"delete": "Delete",
+		"alertMessage": "This action will {action} {article}  selected user{plural}."
+	},
+	"AlertModal": {
+		"title": "Are you sure?",
+		"cancelButton": "Cancel",
+		"continueButton": "Continue",
+		"loading": "Loading...",
+		"containsCurrentUser": "Your selection contains your account!",
+		"changeToNormalMessage": "If you change your role to normal user, you will not be able to manage all accounts anymore.",
+		"dangerAction": "Blocking or deleting your account will log you out."
+	},
+	"ManageTemplatePage": {
+		"tabResponses": "Responses",
+		"tabSubmitted": "Submitted Forms",
+		"publicButton": "Go to Public View"
+	},
+	"AnswersPage": {
+		"title": "My Forms"
+	},
+	"SubmittedFormCard": {
+		"submittedTime": "Submitted {message}",
+		"viewButton": "View"
+	},
+	"SubmittedFormsList": {
+		"noForms": "No forms have been submitted yet."
+	},
+	"ResponsesContent": {
+		"noResponsesToQuestion": "No responses yet for this question.",
+		"responseLabel": "response"
+	},
+	"DisplayShortAnswers": {
+		"displayBarQuestion": "Do you want to display the answers as a bar chart?"
+	},
+	"BarChart": {
+		"legend": "Count"
+	},
+	"ResponsePage": {
+		"description": "Thank you for your answer.",
+		"goToButton": "Go to the Template Overview"
+	},
+	"PublishTemplateButton": {
+		"publishButton": "Publish",
+		"dialogTitle": "Are you absolutely sure?",
+		"dialogDescription": "This template will be published and available for everyone to see.",
+		"cancelButton": "Cancel",
+		"continueButton": "Continue",
+		"errorMessage": {
+			"title": "Title is required.",
+			"description": "Description is required.",
+			"tag": "At least one tag is required.",
+			"question": "At least one question is required.",
+			"questionTitle": "Each question must have a title.",
+			"questionDescription": "Each question must have a description."
+		},
+		"questionValidOptions": "Question {title} requires at least 2 options.",
+		"questionSetAnswer": "Question {title} must have correct answers set.",
+		"toastError": "here are some issues with your template",
+		"toastMoreInfo": "More Info",
+		"dialogMoreInfoTitle": "Valid Question Criteria",
+		"dialogMoreInfoDescription": "To create a valid question, please ensure it meets the following criteria:",
+		"dialogMoreInfoCriteriaBody": "Adhere to these rules will allow you to publish your template.",
+		"dialogMoreInfoCriteria1": "Title: Each question must have a clear and descriptive title.",
+		"dialogMoreInfoCriteria2": "Description: A brief description should accompany each question.",
+		"dialogMoreInfoCriteria3": "Options: For multiple choice or checkbox, provide at least two options.",
+		"dialogMoreInfoCriteria4": "Correct Answers: If rated, specify correct answers for multiple choice, checkbox, or number types."
+	},
+	"ModeToggle": {
+		"light": "Light",
+		"dark": "Dark",
+		"system": "System"
+	},
+	"DeleteTemplate": {
+		"title": "Just checking to see if you are sure about deleting this template.",
+		"description": "Deleting this template is irreversible. Once you proceed, all associated data will be lost permanently. Please double-check to ensure this is what you want to do.",
+		"cancelButton": "Cancel",
+		"continueButton": "Continue",
+		"triggerButton": "Delete"
+	},
+	"TagSearchPage": {
+		"title": "Tag Cloud Search"
+	},
+	"TemplatesTagList": {
+		"noTemplates": "No templates found",
+		"instruction": "Select a tag name to view the templates associated with it."
+	},
+	"TemplatesList": {
+		"noTemplates": "No templates found"
+	},
+	"WordCloudDialog": {
+		"triggerButton": "Open"
+	},
+	"LoadingPage": {
+		"loading": "Loading..."
+	},
+	"Auth": {
+		"title": "{action} to access full features",
+		"description": "Use your email or another service to continue.",
+		"email": "Email",
+		"password": "Password",
+		"firstName": "First Name",
+		"lastName": "Last Name",
+		"goToSignUp": "Don't have an account?",
+		"goToSignIn": "Already have an account?",
+		"signUp": "Sign Up",
+		"signIn": "Sign In",
+		"signOut": "Sign Out",
+		"continueButton": "Continue",
+		"continueGoogle": "Continue with Google"
+	},
+	"AuthServerActions": {
+		"invalidFields": "Invalid fields!",
+		"register": {
+			"errorEmailTaken": "Email is already taken",
+			"success": "You have created an account"
+		},
+		"login": {
+			"errorInvalidCredentials": "Invalid credentials!",
+			"errorNoPassword": "Login With a OAuth provider",
+			"errorBlocked": "Your account has been blocked!",
+			"errorGeneric": "Something went wrong!"
+		}
+	},
+	"UserAvatar": {
+		"guest": "Guest"
+	}
+}

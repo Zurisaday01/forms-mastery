@@ -1,0 +1,29 @@
+import { getFormsByTemplateId } from '@/actions/form.actions';
+import SubmittedFormCard from './submitted-form-card';
+import { getTranslations } from 'next-intl/server';
+
+interface SubmittedFormsListProps {
+	templateId: string;
+}
+
+const SubmittedFormsList = async ({ templateId }: SubmittedFormsListProps) => {
+	const forms = await getFormsByTemplateId(templateId);
+	const t = await getTranslations('SubmittedFormsList');
+
+	if (forms.length === 0) return <p>{t('noForms')}</p>;
+
+	return (
+		<div className='flex flex-col gap-3'>
+			{forms.map(form => (
+				<SubmittedFormCard
+					key={form.id}
+					formId={form.id}
+					user={form.user}
+					createdAt={form.createdAt}
+					modifiedBy='creator'
+				/>
+			))}
+		</div>
+	);
+};
+export default SubmittedFormsList;
