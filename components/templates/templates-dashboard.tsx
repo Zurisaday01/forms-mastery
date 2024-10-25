@@ -1,3 +1,4 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import TemplatesOptions from '@/components/templates/templates-options';
 import { Button } from '@/components/ui/button';

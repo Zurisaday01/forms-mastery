@@ -5,8 +5,8 @@ import {
 	getDislikesByCommentId,
 	getLikesByCommentId,
 } from '@/actions/comment.actions';
-import { useLocale, useTranslations } from 'next-intl';
 import { es, enUS } from 'date-fns/locale';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 const CommentCard = async ({
 	comment,
@@ -15,8 +15,8 @@ const CommentCard = async ({
 	comment: Comment;
 	userSessionId: string;
 }) => {
-	const currentLocale = useLocale();
-	const t = useTranslations('CommentCard');
+	const currentLocale = await getLocale();
+	const t = await getTranslations('CommentCard');
 	const likes = await getLikesByCommentId(comment.id);
 	const dislikes = await getDislikesByCommentId(comment.id);
 
