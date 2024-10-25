@@ -326,5 +326,10 @@
 	"TemplateServerActions": {
 		"like": "Like added",
 		"noLike": "Like removed"
+	},
+	"NotFoundPage": {
+		"title": "⚠️ Not Found 😨",
+		"description": "Could not find requested resource",
+		"goHomeButton": "Go Home"
 	}
 }

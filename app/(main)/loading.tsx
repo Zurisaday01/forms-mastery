@@ -3,8 +3,8 @@ import { getTranslations } from 'next-intl/server';
 export default async function Loading() {
 	const t = await getTranslations('LoadingPage');
 	return (
-		<div className='flex items-center justify-center w-full h-[100vh]'>
-			<div className='flex justify-center items-center space-x-1 text-sm text-gray-700'>
+		<div className=' flex items-center justify-center w-full h-[100vh]'>
+			<div className='flex justify-center items-center space-x-1 text-sm text-gray-700 dark:text-white'>
 				<svg
 					fill='none'
 					className='w-6 h-6 animate-spin'

@@ -327,5 +327,10 @@
 	"TemplateServerActions": {
 		"like": "Me gusta añadido",
 		"noLike": "Me gusta eliminado"
+	},
+	"NotFoundPage": {
+		"title": "⚠️ No encontrado 😨",
+		"description": "No se pudo encontrar el recurso solicitado",
+		"goHomeButton": "Ir a Inicio"
 	}
 }
