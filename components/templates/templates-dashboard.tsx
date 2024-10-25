@@ -1,27 +1,21 @@
-'use client';
-import { useTranslations } from 'next-intl';
 import TemplatesOptions from '@/components/templates/templates-options';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { getTranslations } from 'next-intl/server';
 
 interface TemplatesDashboardProps {
 	allTemplates: Template[];
 	latestTemplates: Template[];
 	popularTemplates: Template[];
-	searchParams: { [key: string]: string | string[] | undefined };
 }
 
-const TemplatesDashboard = ({
+const TemplatesDashboard = async ({
 	allTemplates,
 	latestTemplates,
 	popularTemplates,
-	searchParams,
 }: TemplatesDashboardProps) => {
-	const t = useTranslations('HomePage');
-
-	const keyString = `${searchParams.ownership}-${searchParams.sort}`;
+	const t = await getTranslations('HomePage');
 	return (
 		<>
 			<div className='w-full flex justify-end pt-4'>
@@ -46,14 +40,12 @@ const TemplatesDashboard = ({
 					description={t('descriptionLatest')}
 				/>
 
-				<Suspense key={keyString} fallback={<p>Loading...</p>}>
-					<TemplatesOptions
-						templates={allTemplates}
-						type='all'
-						subtitle={t('subTitleAll')}
-						description={t('descriptionAll')}
-					/>
-				</Suspense>
+				<TemplatesOptions
+					templates={allTemplates}
+					type='all'
+					subtitle={t('subTitleAll')}
+					description={t('descriptionAll')}
+				/>
 			</div>
 		</>
 	);

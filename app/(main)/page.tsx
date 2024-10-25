@@ -27,7 +27,6 @@ const HomePage = async ({
 
 	return (
 		<TemplatesDashboard
-			searchParams={searchParams}
 			allTemplates={allTemplates as unknown as Template[]}
 			latestTemplates={latestTemplates as unknown as Template[]}
 			popularTemplates={popularTemplates as unknown as Template[]}
