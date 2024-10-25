@@ -128,18 +128,26 @@ When users opt to rate questions, specific requirements apply for the following 
 ## Demos
 
 ### Non-authenticated User View
+https://github.com/user-attachments/assets/9a2f66c3-4b4e-44ee-bc17-3a349fa1b734
 
 ### Changing Language and Theme
+https://github.com/user-attachments/assets/6031d557-a95b-428b-a3f1-1d55ad91742b
 
 ### Like/Dislike Templates and Comments
+https://github.com/user-attachments/assets/314f4ade-0787-4a05-9cc1-cc339f4bdd74
 
 ### Login and User Management
+https://github.com/user-attachments/assets/592bb075-1a0c-41aa-b1ad-532acd663077
 
 ### Create a Template
+https://github.com/user-attachments/assets/096cacdd-30cd-4fb9-bcee-7e3aae7d4f67
 
 ### Submit Form and Update Answers
+https://github.com/user-attachments/assets/20cdf6c0-24ae-4127-a8fb-7a3bc4c41daf
 
 ### Manage Template
+https://github.com/user-attachments/assets/31f9cf40-c97d-447a-9e14-618f9ea12131
+
 
 ## Test Accounts
 
