@@ -20,6 +20,7 @@
 		"@frank-mayer/react-tag-cloud": "^1.2.1",
 		"@hookform/resolvers": "^3.9.0",
 		"@prisma/client": "^5.20.0",
+		"@prisma/extension-accelerate": "^1.2.1",
 		"@radix-ui/react-alert-dialog": "^1.1.2",
 		"@radix-ui/react-checkbox": "^1.1.2",
 		"@radix-ui/react-dialog": "^1.1.2",

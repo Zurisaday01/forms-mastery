@@ -20,15 +20,30 @@ export function useCommentToggleLike() {
 					title: data.message, // Use the message from the response
 				});
 
-				// Invalidate queries to refetch if necessary
-				queryClient.invalidateQueries({
-					queryKey: ['comment-likes', variables.commentId],
-					exact: true,
-				});
-				queryClient.invalidateQueries({
-					queryKey: ['comment-dislikes', variables.commentId],
-					exact: true,
-				});
+				queryClient.setQueryData(
+					['comment-likes', variables.commentId],
+					(oldData: { likesCount: number; isLikedByCurrentUser: boolean }) => {
+						return {
+							likesCount: data.likesCount,
+							isLikedByCurrentUser: !oldData.isLikedByCurrentUser,
+						};
+					}
+				);
+
+				queryClient.setQueryData(
+					['comment-dislikes', variables.commentId],
+					(oldData: {
+						dislikesCount: number;
+						isDislikedByCurrentUser: boolean;
+					}) => {
+						return {
+							dislikesCount: oldData.isDislikedByCurrentUser
+								? oldData.dislikesCount - 1
+								: oldData.dislikesCount,
+							isDislikedByCurrentUser: false,
+						};
+					}
+				);
 			},
 			onError: err => {
 				console.error('Error toggling like:', err);

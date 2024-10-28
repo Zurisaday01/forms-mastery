@@ -35,7 +35,7 @@ export const getLikesCountByTemplateId = async (
 		const data = await response.json();
 
 		// Check if the current user has liked the template
-		const liked = data?.likes.find(
+		const liked = data?.likes.some(
 			(like: Like) => like.userId === currentUserId
 		);
 

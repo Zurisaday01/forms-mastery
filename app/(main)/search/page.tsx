@@ -13,6 +13,8 @@ const SearchPage = async ({
 	const templates = await getTemplatesByQuery(query);
 	const t = await getTranslations('TemplatesList');
 
+	console.log(query);
+
 	if (!templates) {
 		return notFound();
 	}

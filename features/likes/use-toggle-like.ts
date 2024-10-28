@@ -21,10 +21,15 @@ export function useToggleLike() {
 			// STEP 2: Update the likes count in the cache
 			// queryClient.setQueryData(['likes', variables.templateId], likesCount);
 
-			queryClient.invalidateQueries({
-				queryKey: ['likes', variables.templateId],
-				exact: true,
-			});
+			queryClient.setQueryData(
+				['likes', variables.templateId],
+				(oldData: { likesCount: number; isLikedByCurrentUser: boolean }) => {
+					return {
+						likesCount: data.likesCount,
+						isLikedByCurrentUser: !oldData.isLikedByCurrentUser,
+					};
+				}
+			);
 		},
 		onError: err => {
 			console.error('Error toggling like:', err);

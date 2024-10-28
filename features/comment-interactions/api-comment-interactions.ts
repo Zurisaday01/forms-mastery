@@ -43,10 +43,8 @@ export const getLikesCountByCommentId = async (
 		});
 		const data = await response.json();
 
-		console.log('data', data);
-
 		// Check if the current user has liked the template
-		const liked = data?.likes.find(
+		const liked = data?.likes.some(
 			(like: Like) => like.userId === currentUserId
 		);
 
@@ -70,10 +68,9 @@ export const getDislikesCountByCommentId = async (
 		);
 		const data = await response.json();
 
-		console.log('data', data);
 
 		// Check if the current user has liked the template
-		const disliked = data?.dislikes.find(
+		const disliked = data?.dislikes.some(
 			(dislike: Like) => dislike.userId === currentUserId
 		);
 
