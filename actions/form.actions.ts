@@ -155,6 +155,13 @@ export const getAnsweredTemplatesByUserId = cache(async (userId: string) => {
 				questions: true,
 				author: true,
 				tags: true,
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 			orderBy: {
 				createdAt: 'desc',

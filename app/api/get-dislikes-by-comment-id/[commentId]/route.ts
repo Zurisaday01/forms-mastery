@@ -1,4 +1,8 @@
-import { getDislikesByCommentId } from '@/actions/comment.actions';
+import {
+	getDislikesByCommentId,
+	isDislikedByCurrentUserAction,
+} from '@/actions/comment.actions';
+import { Dislike } from '@prisma/client';
 import { NextResponse } from 'next/server';
 
 export async function GET(
@@ -26,8 +30,13 @@ export async function GET(
 			);
 		}
 
+		// Check if the current user has liked the template
+		const isDislikedByCurrentUser = await isDislikedByCurrentUserAction(
+			dislikes as Dislike[]
+		);
+
 		// Success response with dislikes data
-		return NextResponse.json({ dislikes });
+		return NextResponse.json({ dislikes, isDislikedByCurrentUser });
 	} catch (error) {
 		console.error('Error fetching dislikes:', error);
 

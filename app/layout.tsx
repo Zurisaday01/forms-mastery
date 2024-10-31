@@ -7,8 +7,9 @@ import { getLocale, getMessages } from 'next-intl/server';
 
 import './globals.css';
 import ReactQueryProvider from '@/components/providers/react-query-provider';
-import { auth } from '@/auth';
+// import { auth } from '@/auth';
 import { NextAuthProvider } from '@/components/providers/next-auth-provider';
+import { auth } from '@/auth';
 
 const barlow = Barlow({
 	weight: ['400', '500', '600'],
@@ -36,25 +37,23 @@ export default async function RootLayout({
 	const messages = await getMessages();
 	const session = await auth();
 
-	console.log('session', session);
-
 	return (
 		<html lang={locale}>
 			<body className={`${barlow.variable} ${heebo.variable} antialiased`}>
 				<Toaster />
-				<NextIntlClientProvider messages={messages}>
-					<ThemeProvider
-						attribute='class'
-						defaultTheme='system'
-						enableSystem
-						disableTransitionOnChange>
-						<NextAuthProvider session={session}>
+				<NextAuthProvider session={session}>
+					<NextIntlClientProvider messages={messages}>
+						<ThemeProvider
+							attribute='class'
+							defaultTheme='system'
+							enableSystem
+							disableTransitionOnChange>
 							<ReactQueryProvider>
 								<>{children}</>
 							</ReactQueryProvider>
-						</NextAuthProvider>
-					</ThemeProvider>
-				</NextIntlClientProvider>
+						</ThemeProvider>
+					</NextIntlClientProvider>
+				</NextAuthProvider>
 			</body>
 		</html>
 	);

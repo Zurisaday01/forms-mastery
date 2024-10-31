@@ -2,6 +2,7 @@
 
 import { SessionProvider } from 'next-auth/react';
 import { Session } from 'next-auth';
+import { useMemo } from 'react';
 
 type Props = {
 	children?: React.ReactNode;
@@ -9,5 +10,15 @@ type Props = {
 };
 
 export const NextAuthProvider = ({ children, session }: Props) => {
-	return <SessionProvider session={session}>{children}</SessionProvider>;
+	const sessionKey = new Date().valueOf();
+
+	const memoizedSessionKey = useMemo(() => {
+		return sessionKey;
+	}, [session, sessionKey]);
+
+	return (
+		<SessionProvider session={session} key={memoizedSessionKey}>
+			{children}
+		</SessionProvider>
+	);
 };

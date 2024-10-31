@@ -17,6 +17,9 @@ const TemplatesTagList = async ({
 			<div className='cards_grid'>
 				{templatesByTagName?.map(template => (
 					<TemplateCard
+						likesCount={template._count?.likes}
+						commentsCount={template._count?.comments}
+						formsCount={template._count?.forms}
 						id={template.id as string}
 						key={template.id}
 						title={template.title}

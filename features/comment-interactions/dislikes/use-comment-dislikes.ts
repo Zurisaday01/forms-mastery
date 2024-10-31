@@ -1,16 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-import {
-	getDislikesCountByCommentId,
-} from '../api-comment-interactions';
+import { getDislikesCountByCommentId } from '../api-comment-interactions';
 
 export function useCommentDislikes({
 	initialDislikesCount,
 	commentId,
-	currentUserId,
 }: {
 	initialDislikesCount: number;
 	commentId: string;
-	currentUserId: string;
 }) {
 	const {
 		data: {
@@ -21,7 +17,7 @@ export function useCommentDislikes({
 		error,
 	} = useQuery({
 		queryKey: ['comment-dislikes', commentId],
-		queryFn: () => getDislikesCountByCommentId(commentId, currentUserId),
+		queryFn: () => getDislikesCountByCommentId(commentId),
 		initialData: {
 			dislikesCount: initialDislikesCount,
 			isDislikedByCurrentUser: false,

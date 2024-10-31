@@ -6,9 +6,9 @@ export async function POST(request: Request) {
 		// Parse the JSON body
 		const body = await request.json();
 
-		const { userId, commentId } = body;
+		const { commentId } = body;
 
-		const response = await toggleCommentDislike(userId, commentId);
+		const response = await toggleCommentDislike(commentId);
 
 		return NextResponse.json(
 			{ message: response.message, dislikesCount: response.dislikesCount },

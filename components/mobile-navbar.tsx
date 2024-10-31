@@ -14,10 +14,10 @@ import { cn } from '@/lib/utils';
 import { Icons } from './icons';
 import { Menu } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useSession } from 'next-auth/react';
 import { Button } from './ui/button';
 import UserAvatar from './user-avatar';
 import SignOutButton from './auth/sign-out-button';
+import { useSession } from 'next-auth/react';
 
 const Navbar = () => {
 	const { data: session, status } = useSession();

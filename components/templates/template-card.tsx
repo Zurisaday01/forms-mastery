@@ -13,6 +13,9 @@ interface TemplateCardProps {
 	createdAt: Date;
 	tags: Tag[];
 	user: User;
+	likesCount?: number;
+	formsCount?: number;
+	commentsCount?: number;
 }
 
 const TemplateCard = async ({
@@ -22,6 +25,9 @@ const TemplateCard = async ({
 	tags,
 	user,
 	createdAt,
+	likesCount,
+	formsCount,
+	commentsCount,
 }: TemplateCardProps) => {
 	const currentLocale = await getLocale();
 	const t = await getTranslations('TemplateCard');
@@ -67,7 +73,12 @@ const TemplateCard = async ({
 				</ScrollArea>
 			</div>
 
-			<TemplateEngagementMetrics templateId={id} />
+			<TemplateEngagementMetrics
+				templateId={id}
+				likesCount={likesCount as number}
+				formsCount={formsCount as number}
+				commentsCount={commentsCount as number}
+			/>
 		</div>
 	);
 };

@@ -1,8 +1,7 @@
-export const toggleCommentLike = async (userId: string, commentId: string) => {
+export const toggleCommentLike = async (commentId: string) => {
 	const response = await fetch('/api/toggle-comment-like', {
 		method: 'POST',
 		body: JSON.stringify({
-			userId,
 			commentId,
 		}),
 	});
@@ -14,14 +13,11 @@ export const toggleCommentLike = async (userId: string, commentId: string) => {
 	return response.json();
 };
 
-export const toggleCommentDislike = async (
-	userId: string,
-	commentId: string
-) => {
+export const toggleCommentDislike = async (commentId: string) => {
+	console.log('commentId', commentId);
 	const response = await fetch('/api/toggle-comment-dislike', {
 		method: 'POST',
 		body: JSON.stringify({
-			userId,
 			commentId,
 		}),
 	});
@@ -33,32 +29,24 @@ export const toggleCommentDislike = async (
 	return response.json();
 };
 
-export const getLikesCountByCommentId = async (
-	commentId: string,
-	currentUserId: string
-) => {
+export const getLikesCountByCommentId = async (commentId: string) => {
 	try {
 		const response = await fetch(`/api/get-likes-by-comment-id/${commentId}`, {
 			method: 'GET',
 		});
 		const data = await response.json();
 
-		// Check if the current user has liked the template
-		const liked = data?.likes.some(
-			(like: Like) => like.userId === currentUserId
-		);
-
-		return { likesCount: data.likes.length, isLikedByCurrentUser: liked };
+		return {
+			likesCount: data.likes.length,
+			isLikedByCurrentUser: data.isLikedByCurrentUser,
+		};
 	} catch (error) {
 		console.error('Error fetching likes by template ID:', error);
 		throw error;
 	}
 };
 
-export const getDislikesCountByCommentId = async (
-	commentId: string,
-	currentUserId: string
-) => {
+export const getDislikesCountByCommentId = async (commentId: string) => {
 	try {
 		const response = await fetch(
 			`/api/get-dislikes-by-comment-id/${commentId}`,
@@ -68,15 +56,9 @@ export const getDislikesCountByCommentId = async (
 		);
 		const data = await response.json();
 
-
-		// Check if the current user has liked the template
-		const disliked = data?.dislikes.some(
-			(dislike: Like) => dislike.userId === currentUserId
-		);
-
 		return {
 			dislikesCount: data.dislikes.length,
-			isDislikedByCurrentUser: disliked,
+			isDislikedByCurrentUser: data.isDislikedByCurrentUser,
 		};
 	} catch (error) {
 		console.error('Error fetching likes by template ID:', error);

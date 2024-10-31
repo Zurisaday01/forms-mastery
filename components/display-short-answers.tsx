@@ -40,7 +40,7 @@ const DisplayShortAnswers = ({ answers }: DisplayShortAnswerProps) => {
 						return (
 							<li
 								key={answer.id}
-								className='flex flex-col gap-3 bg-blue-100 rounded-sm p-2'>
+								className='flex flex-col gap-3 bg-blue-100 text-black rounded-sm p-2'>
 								{answer.answers.map((item, index) => {
 									return <p key={`${answer.id}${index}`}>{item}</p>;
 								})}

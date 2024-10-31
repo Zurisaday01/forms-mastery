@@ -1,5 +1,6 @@
 'use server';
 
+import { auth } from '@/auth';
 import { prisma as db } from '@/lib/prisma';
 import { formatToCamelCase } from '@/lib/utils';
 import { AnswerType, Prisma } from '@prisma/client';
@@ -155,6 +156,13 @@ export const getTemplateById = cache(async (id: string) => {
 				questions: true,
 				author: true,
 				tags: true,
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 		});
 
@@ -217,6 +225,13 @@ export const getAllTemplates = cache(
 					questions: true,
 					author: true,
 					tags: true,
+					_count: {
+						select: {
+							likes: true,
+							comments: true,
+							forms: true,
+						},
+					},
 				},
 				orderBy: orderByConditions,
 			});
@@ -239,6 +254,13 @@ export const getMyTemplates = async (userId: string) => {
 				questions: true,
 				tags: true,
 				author: true,
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 			orderBy: {
 				createdAt: 'desc',
@@ -299,6 +321,13 @@ export const getTemplatesByQuery = cache(async (query: string) => {
 			include: {
 				author: true,
 				tags: true,
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 		});
 
@@ -320,6 +349,13 @@ export const getPopularTemplates = cache(async () => {
 				questions: true,
 				author: true,
 				tags: true,
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 			orderBy: {
 				forms: {
@@ -344,6 +380,13 @@ export const getLatestTemplates = cache(async () => {
 				questions: true,
 				author: true,
 				tags: true,
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 			orderBy: {
 				createdAt: 'desc',
@@ -425,17 +468,26 @@ export const getLikesByTemplateId = cache(async (templateId: string) => {
 	}
 });
 
+// this template is liked by the current user
+export const isLikedByCurrentUserAction = cache(async (likes: Like[]) => {
+	const session = await auth();
+	return likes.some((like: Like) => like.userId === session?.user?.id);
+});
+
 // Like a template or remove the like
-export const toggleTemplateLike = async (
-	userId: string,
-	templateId: string
-) => {
+export const toggleTemplateLike = async (templateId: string) => {
 	try {
+		const session = await auth();
+
+		if (!session?.user) {
+			throw new Error('User is not authenticated');
+		}
+
 		const t = await getTranslations('TemplateServerActions');
 		// Check if the user has already liked the template
 		const existingLike = await db.like.findFirst({
 			where: {
-				userId,
+				userId: session?.user?.id,
 				templateId,
 			},
 		});
@@ -462,7 +514,7 @@ export const toggleTemplateLike = async (
 			// If like doesn't exist, create a new like
 			await db.like.create({
 				data: {
-					userId,
+					userId: session?.user?.id ?? '',
 					templateId,
 				},
 			});

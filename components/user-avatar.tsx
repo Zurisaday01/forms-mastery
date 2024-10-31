@@ -1,10 +1,11 @@
 'use client';
 import { Session } from 'next-auth';
-import { useCurrentSession } from '@/hooks/use-current-session';
+
 import { useTranslations } from 'next-intl';
+import { useSession } from 'next-auth/react';
 
 export default function UserAvatar() {
-	const { session } = useCurrentSession();
+	const { data: session } = useSession();
 	const t = useTranslations('UserAvatar');
 
 	return (

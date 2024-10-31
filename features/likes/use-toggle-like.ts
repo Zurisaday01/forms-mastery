@@ -6,13 +6,8 @@ export function useToggleLike() {
 	const queryClient = useQueryClient();
 
 	const { isPending: isLoadingToggle, mutate: toggleLike } = useMutation({
-		mutationFn: async ({
-			userId,
-			templateId,
-		}: {
-			userId: string | undefined;
-			templateId: string;
-		}) => toggleTemplateLike(userId, templateId),
+		mutationFn: async ({ templateId }: { templateId: string }) =>
+			toggleTemplateLike(templateId),
 		onSuccess: (data, variables) => {
 			// STEP 1 : send message
 			toast({
@@ -26,7 +21,7 @@ export function useToggleLike() {
 				(oldData: { likesCount: number; isLikedByCurrentUser: boolean }) => {
 					return {
 						likesCount: data.likesCount,
-						isLikedByCurrentUser: !oldData.isLikedByCurrentUser,
+						isLikedByCurrentUser: !oldData?.isLikedByCurrentUser,
 					};
 				}
 			);

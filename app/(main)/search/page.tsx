@@ -13,8 +13,6 @@ const SearchPage = async ({
 	const templates = await getTemplatesByQuery(query);
 	const t = await getTranslations('TemplatesList');
 
-	console.log(query);
-
 	if (!templates) {
 		return notFound();
 	}
@@ -25,6 +23,9 @@ const SearchPage = async ({
 			<div className='cards_grid'>
 				{templates.map(template => (
 					<TemplateCard
+						likesCount={template._count?.likes}
+						commentsCount={template._count?.comments}
+						formsCount={template._count?.forms}
 						id={template.id as string}
 						key={template.id}
 						title={template.title}

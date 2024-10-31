@@ -6,9 +6,9 @@ export async function POST(request: Request) {
 		// Parse the JSON body
 		const body = await request.json();
 
-		const { userId, commentId } = body;
+		const { commentId } = body;
 
-		const response = await toggleCommentLike(userId, commentId);
+		const response = await toggleCommentLike(commentId);
 
 		return NextResponse.json(
 			{ message: response.message, likesCount: response.likesCount },

@@ -89,6 +89,13 @@ export const getTemplatesByTagName = async (tagName: string) => {
 			include: {
 				tags: true, // Include tags associated with the template
 				author: true, // Include author details
+				_count: {
+					select: {
+						likes: true,
+						comments: true,
+						forms: true,
+					},
+				},
 			},
 			orderBy: {
 				createdAt: 'desc', // Order templates by creation date

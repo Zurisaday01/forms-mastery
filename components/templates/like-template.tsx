@@ -4,9 +4,9 @@ import { Button } from '../ui/button';
 import { useLikes } from '@/features/likes/use-likes';
 import { useToggleLike } from '@/features/likes/use-toggle-like';
 import { Loader2 } from 'lucide-react';
-import { useSession } from 'next-auth/react';
 import { toast } from '@/hooks/use-toast';
 import { useLocale, useTranslations } from 'next-intl';
+import { useSession } from 'next-auth/react';
 
 interface LikeTemplateProps {
 	templateId: string;
@@ -14,8 +14,9 @@ interface LikeTemplateProps {
 }
 
 const LikeTemplate = ({ templateId, initialLikes }: LikeTemplateProps) => {
+	const { status } = useSession();
+
 	// get the current user session
-	const { data: session, status } = useSession();
 	const tToast = useTranslations('Toast');
 	const currentLocale = useLocale();
 
@@ -26,7 +27,6 @@ const LikeTemplate = ({ templateId, initialLikes }: LikeTemplateProps) => {
 	} = useLikes({
 		initialLikesCount: initialLikes,
 		templateId,
-		currentUserId: session?.user?.id,
 	});
 
 	// Handle like toggling
@@ -51,7 +51,6 @@ const LikeTemplate = ({ templateId, initialLikes }: LikeTemplateProps) => {
 
 		// Optimistically update likes count
 		toggleLike({
-			userId: session?.user?.id,
 			templateId,
 		});
 	};
@@ -60,11 +59,11 @@ const LikeTemplate = ({ templateId, initialLikes }: LikeTemplateProps) => {
 		<Button
 			onClick={handleToggle}
 			variant='ghost'
-			disabled={isToggling || isLikesLoading} // Disable button while toggling or loading likes
+			disabled={isToggling || isLikesLoading || status === 'loading'} // Disable button while toggling or loading likes
 			className={`${
 				isLikedByCurrentUser ? 'bg-red-100/50 hover:bg-red-100/30' : ''
 			} flex justify-center items-center gap-2 py-1 px-3`}>
-			{isToggling || isLikesLoading ? (
+			{isToggling || isLikesLoading || status === 'loading' ? (
 				// Show loader if toggling or loading likes
 				<Loader2 size={20} className='animate-spin' />
 			) : (

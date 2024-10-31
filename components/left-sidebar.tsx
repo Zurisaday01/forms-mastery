@@ -7,9 +7,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from './ui/button';
 import { Icons } from '@/components/icons';
-import { useSession } from 'next-auth/react';
 import { useLocale, useTranslations } from 'next-intl';
 import SignOutButton from './auth/sign-out-button';
+import { useSession } from 'next-auth/react';
 
 const LeftSidebar = () => {
 	const { data: session, status } = useSession();

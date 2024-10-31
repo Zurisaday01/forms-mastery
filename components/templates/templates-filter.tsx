@@ -7,16 +7,16 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/components/ui/select';
-import { useSession } from 'next-auth/react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useSession } from 'next-auth/react';
 
 const TemplatesFilter = () => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
-	const session = useSession();
+	const { data: session } = useSession();
 
 	const [query, setQuery] = useState('');
 	const [initialized, setInitialized] = useState(false);
@@ -57,7 +57,7 @@ const TemplatesFilter = () => {
 			<Select
 				value={ownership}
 				onValueChange={handleOwnershipChange}
-				disabled={!session?.data?.user}>
+				disabled={!session?.user}>
 				<SelectTrigger className='w-[180px]'>
 					<SelectValue />
 				</SelectTrigger>

@@ -73,6 +73,11 @@ declare global {
 		forms?: Form[];
 		createdAt: Date;
 		updatedAt: Date;
+		_count?: {
+			likes: number;
+			comments: number;
+			forms: number;
+		};
 	}
 
 	interface CreateTemplateProps {

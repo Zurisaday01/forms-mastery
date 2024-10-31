@@ -7,13 +7,8 @@ export function useCommentToggleDislike() {
 
 	const { isPending: isLoadingToggle, mutate: toggleCommentDislike } =
 		useMutation({
-			mutationFn: async ({
-				userId,
-				commentId,
-			}: {
-				userId: string;
-				commentId: string;
-			}) => toggleCommentDislikeApi(userId, commentId),
+			mutationFn: async ({ commentId }: { commentId: string }) =>
+				toggleCommentDislikeApi(commentId),
 			onSuccess: (data, variables) => {
 				// STEP 1 : send message
 				toast({
@@ -28,7 +23,7 @@ export function useCommentToggleDislike() {
 					}) => {
 						return {
 							dislikesCount: data.dislikesCount,
-							isDislikedByCurrentUser: !oldData.isDislikedByCurrentUser,
+							isDislikedByCurrentUser: !oldData?.isDislikedByCurrentUser,
 						};
 					}
 				);
@@ -37,9 +32,9 @@ export function useCommentToggleDislike() {
 					['comment-likes', variables.commentId],
 					(oldData: { likesCount: number; isLikedByCurrentUser: boolean }) => {
 						return {
-							likesCount: oldData.isLikedByCurrentUser
-								? oldData.likesCount - 1
-								: oldData.likesCount,
+							likesCount: oldData?.isLikedByCurrentUser
+								? oldData?.likesCount - 1
+								: oldData?.likesCount,
 							isLikedByCurrentUser: false,
 						};
 					}

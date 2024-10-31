@@ -17,7 +17,6 @@ const ResponsesContent = async ({ templateId }: ResponsesContentProps) => {
 	return (
 		<div className='flex flex-col gap-6'>
 			{responses.map(response => {
-				console.log('rs', response.answers.length);
 				return (
 					<div key={response.id}>
 						<div className='flex flex-col gap-1 mb-3'>
@@ -48,7 +47,7 @@ const ResponsesContent = async ({ templateId }: ResponsesContentProps) => {
 										return (
 											<li
 												key={answer.id}
-												className='flex flex-col gap-3 bg-blue-100 rounded-sm p-2'>
+												className='flex flex-col gap-3 bg-blue-100 text-black rounded-sm p-2'>
 												{answer.answers.map((item, index) => {
 													return <p key={`${answer.id}${index}`}>{item}</p>;
 												})}

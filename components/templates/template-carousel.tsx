@@ -21,6 +21,9 @@ const TemplateCarousel = ({ templates }: { templates: Template[] }) => {
 				{templates.map(template => (
 					<CarouselItem key={template.id} className='md:basis-1/2 lg:basis-1/4'>
 						<TemplateCard
+							likesCount={template._count?.likes}
+							commentsCount={template._count?.comments}
+							formsCount={template._count?.forms}
 							id={template.id as string}
 							key={template.id}
 							title={template.title}

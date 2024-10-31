@@ -1,4 +1,7 @@
-import { getLikesByTemplateId } from '@/actions/template.actions';
+import {
+	getLikesByTemplateId,
+	isLikedByCurrentUserAction,
+} from '@/actions/template.actions';
 import { NextResponse } from 'next/server';
 
 export async function GET(
@@ -26,8 +29,13 @@ export async function GET(
 			);
 		}
 
+		// Check if the current user has liked the template
+		const isLikedByCurrentUser = await isLikedByCurrentUserAction(
+			likes as Like[]
+		);
+
 		// Success response with likes data
-		return NextResponse.json({ likes });
+		return NextResponse.json({ likes, isLikedByCurrentUser });
 	} catch (error) {
 		console.error('Error fetching likes:', error);
 

@@ -1,8 +1,9 @@
 'use server';
 
+import { auth } from '@/auth';
 import { prisma as db } from '@/lib/prisma';
 import { CreateUpdateCommentSchema } from '@/schema';
-import { Prisma } from '@prisma/client';
+import { Dislike, Prisma } from '@prisma/client';
 import { getTranslations } from 'next-intl/server';
 import { revalidatePath } from 'next/cache';
 import { cache } from 'react';
@@ -15,8 +16,6 @@ export const getAllCommentsByTemplateId = cache(async (templateId: string) => {
 				templateId,
 			},
 			include: {
-				// likes: true,
-				// dislikes: true,
 				author: true,
 			},
 		});
@@ -152,22 +151,26 @@ export const getDislikesByCommentId = cache(async (commentId: string) => {
 
 // Toggle like on a comment and remove dislike if it exists, then return updated counts
 
-export const toggleCommentLike = async (userId: string, commentId: string) => {
+export const toggleCommentLike = async (commentId: string) => {
 	try {
+		const session = await auth();
+		if (!session?.user) {
+			throw new Error('User is not authenticated');
+		}
 		const t = await getTranslations('CommentServerActions');
 
 		const transaction = await db.$transaction(
 			async (prisma: Prisma.TransactionClient) => {
 				const existingLike = await prisma.like.findFirst({
 					where: {
-						userId,
+						userId: session?.user?.id,
 						commentId,
 					},
 				});
 
 				const existingDislike = await prisma.dislike.findFirst({
 					where: {
-						userId,
+						userId: session?.user?.id,
 						commentId,
 					},
 				});
@@ -179,7 +182,7 @@ export const toggleCommentLike = async (userId: string, commentId: string) => {
 					});
 				} else {
 					await prisma.like.create({
-						data: { userId, commentId },
+						data: { userId: session?.user?.id ?? '', commentId },
 					});
 				}
 
@@ -214,25 +217,42 @@ export const toggleCommentLike = async (userId: string, commentId: string) => {
 	}
 };
 
+export const isLikedByCurrentUserAction = cache(async (likes: Like[]) => {
+	const session = await auth();
+	return likes.some((like: Like) => like.userId === session?.user?.id);
+});
+
+export const isDislikedByCurrentUserAction = cache(
+	async (dislikes: Dislike[]) => {
+		const session = await auth();
+		return dislikes.some(
+			(dislike: Dislike) => dislike.userId === session?.user?.id
+		);
+	}
+);
+
 // Toggle dislike on a comment and remove like if it exists, then return updated counts
-export const toggleCommentDislike = async (
-	userId: string,
-	commentId: string
-) => {
+export const toggleCommentDislike = async (commentId: string) => {
 	try {
+		const session = await auth();
+
+		if (!session?.user) {
+			throw new Error('User is not authenticated');
+		}
+
 		const t = await getTranslations('CommentServerActions');
 		const transaction = await db.$transaction(
 			async (prisma: Prisma.TransactionClient) => {
 				const existingDislike = await prisma.dislike.findFirst({
 					where: {
-						userId,
+						userId: session?.user?.id,
 						commentId,
 					},
 				});
 
 				const existingLike = await prisma.like.findFirst({
 					where: {
-						userId,
+						userId: session?.user?.id,
 						commentId,
 					},
 				});
@@ -243,8 +263,9 @@ export const toggleCommentDislike = async (
 						where: { id: existingDislike.id },
 					});
 				} else {
+					console.log('session?.user?.id', session?.user?.id);
 					await prisma.dislike.create({
-						data: { userId, commentId },
+						data: { userId: session?.user?.id ?? '', commentId },
 					});
 				}
 

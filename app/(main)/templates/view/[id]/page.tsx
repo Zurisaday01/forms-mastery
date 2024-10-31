@@ -22,7 +22,7 @@ const ViewTemplatePage = async ({ params }: { params: { id: string } }) => {
 		notFound();
 	}
 
-	const { title, description, questions, tags } = template;
+	const { title, description, questions, tags, _count } = template;
 
 	// filter questions by isVisible
 	const visibleQuestions = questions.filter(question => question.isVisible);
@@ -107,7 +107,12 @@ const ViewTemplatePage = async ({ params }: { params: { id: string } }) => {
 						<h2 className='text-2xl font-barlow font-bold'>
 							{t('engagementTitle')}
 						</h2>
-						<TemplateEngagementMetrics templateId={template.id} />
+						<TemplateEngagementMetrics
+							templateId={template.id}
+							likesCount={_count.likes}
+							formsCount={_count.forms}
+							commentsCount={_count.comments}
+						/>
 					</div>
 				</div>
 			</div>

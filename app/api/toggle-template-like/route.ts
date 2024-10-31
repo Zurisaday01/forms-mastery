@@ -7,9 +7,9 @@ export async function POST(request: Request) {
 		const body = await request.json();
 
 		// Extract the userId and templateId from the body
-		const { userId, templateId } = body;
+		const { templateId } = body;
 
-		const response = await toggleTemplateLike(userId, templateId);
+		const response = await toggleTemplateLike(templateId);
 
 		return NextResponse.json(
 			{ message: response.message, likesCount: response.likesCount },
