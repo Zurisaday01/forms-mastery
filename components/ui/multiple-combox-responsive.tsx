@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import { Check, ChevronsUpDown } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 
 interface Option {
@@ -45,6 +44,7 @@ export function MultipleCombox({
 	const isDesktop = useMediaQuery('(min-width: 768px)');
 	const [value, setValue] = React.useState<string[]>(data);
 
+
 	const t = useTranslations('MultipleCombox');
 
 	// Sync value with data prop when it changes
@@ -77,7 +77,7 @@ export function MultipleCombox({
 								? value.map((val, i) => (
 										<div
 											key={i}
-											className='px-2 py-1 rounded-xl border bg-slate-200 text-xs font-medium'>
+											className='text-xs bg-blue-500 text-white rounded-full px-2 py-1'>
 											{options.find(option => option.value === val)?.label}
 										</div>
 								  ))

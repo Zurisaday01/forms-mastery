@@ -30,7 +30,7 @@ const CommentUpdateDialog = async ({ commentId }: CommentUpdateDialogProps) => {
 		<Dialog>
 			<DialogTrigger asChild>
 				<Button variant='ghost' className='p-1 h-min'>
-					<Pencil className='text-gray-500 w-3 h-3' />
+					<Pencil className='text-muted-foreground w-3 h-3' />
 				</Button>
 			</DialogTrigger>
 			<DialogContent className='sm:max-w-md'>

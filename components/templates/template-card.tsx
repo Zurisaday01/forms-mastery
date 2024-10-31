@@ -43,7 +43,7 @@ const TemplateCard = async ({
 						<h3 className='text-gray-800 mt-1 text-sm font-semibold font-barlow dark:text-gray-200'>
 							{user?.firstName} {user?.lastName}
 						</h3>
-						<p className='text-gray-500 text-[12px] dark:text-gray-300'>
+						<p className='text-muted-foreground text-[12px] dark:text-gray-300'>
 							{t('createdTime', {
 								message: formatDistanceToNow(new Date(createdAt), {
 									addSuffix: true,

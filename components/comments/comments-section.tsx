@@ -27,7 +27,7 @@ const CommentsSection = async ({ templateId }: { templateId: string }) => {
 			/>
 			<div className='flex flex-col gap-2 pt-0'>
 				{comments.length === 0 ? (
-					<p className='text-gray-500 text-sm'>{t('noComments')}</p>
+					<p className='text-muted-foreground text-sm'>{t('noComments')}</p>
 				) : (
 					comments.map(comment => (
 						<CommentCard

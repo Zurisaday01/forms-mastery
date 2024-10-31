@@ -84,7 +84,7 @@ const QuestionResponseCard = memo(
 							</Badge>
 						)}
 					</div>
-					<p className='text-sm text-gray-600'>{description}</p>
+					<p className='text-sm text-muted-foreground'>{description}</p>
 				</header>
 				<div className='mt-2'>
 					{answerType === 'short' && (

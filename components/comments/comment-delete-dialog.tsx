@@ -47,7 +47,7 @@ const CommentDeleteDialog = ({ commentId }: CommentDeleteDialogProps) => {
 		<AlertDialog>
 			<AlertDialogTrigger asChild>
 				<Button variant='ghost' className='p-1 h-min'>
-					<Trash2 className='text-gray-500 w-3 h-3' />
+					<Trash2 className='text-muted-foreground w-3 h-3' />
 				</Button>
 			</AlertDialogTrigger>
 			<AlertDialogContent>

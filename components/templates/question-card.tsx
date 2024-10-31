@@ -209,7 +209,7 @@ const QuestionCard = ({
 					value={title}
 					onChange={e => handleTitleChange(e.target.value)}
 				/>
-				<p className='text-sm text-gray-500'>{description}</p>
+				<p className='text-sm text-muted-foreground'>{description}</p>
 				<div className='text-primary/80'>
 					{
 						questionTypes.filter(type => type.value === questionType)[0]?.label[

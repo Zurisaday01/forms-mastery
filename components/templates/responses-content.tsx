@@ -23,7 +23,7 @@ const ResponsesContent = async ({ templateId }: ResponsesContentProps) => {
 							<h2 className='font-bold font-barlow text-xl'>
 								{response.title}
 							</h2>
-							<p className='text-sm text-gray-500'>
+							<p className='text-sm text-muted-foreground'>
 								{response.answers.length} {t('responseLabel')}
 								{(response.answers.length > 2 ||
 									response.answers.length === 0) &&

@@ -314,7 +314,7 @@ const ToolbarUserActions = ({
 							variant='ghost'
 							onClick={() => setOpenBlock(true)}
 							disabled={blocking || selectedRowsIds?.length === 0}>
-							<UserMinus className='text-gray-500' />
+							<UserMinus className='text-muted-foreground' />
 						</Button>
 					</TooltipTrigger>
 					<TooltipContent>
@@ -330,7 +330,7 @@ const ToolbarUserActions = ({
 							variant='ghost'
 							onClick={() => setOpenUnblock(true)}
 							disabled={unblocking || selectedRowsIds?.length === 0}>
-							<UserPlus className='text-gray-500' />
+							<UserPlus className='text-muted-foreground' />
 						</Button>
 					</TooltipTrigger>
 					<TooltipContent>
@@ -346,7 +346,7 @@ const ToolbarUserActions = ({
 							variant='ghost'
 							onClick={() => setOpenRoleAdmin(true)}
 							disabled={roleAdmin || selectedRowsIds?.length === 0}>
-							<Crown className='text-gray-500' />
+							<Crown className='text-muted-foreground' />
 						</Button>
 					</TooltipTrigger>
 					<TooltipContent>
@@ -362,7 +362,7 @@ const ToolbarUserActions = ({
 							variant='ghost'
 							onClick={() => setOpenRoleUser(true)}
 							disabled={roleUser || selectedRowsIds?.length === 0}>
-							<BookUser className='text-gray-500' />
+							<BookUser className='text-muted-foreground' />
 						</Button>
 					</TooltipTrigger>
 					<TooltipContent>
@@ -378,7 +378,7 @@ const ToolbarUserActions = ({
 							variant='ghost'
 							onClick={() => setOpenDelete(true)}
 							disabled={deleting || selectedRowsIds?.length === 0}>
-							<UserX className='text-gray-500' />
+							<UserX className='text-muted-foreground' />
 						</Button>
 					</TooltipTrigger>
 					<TooltipContent>

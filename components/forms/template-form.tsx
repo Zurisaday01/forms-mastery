@@ -163,7 +163,7 @@ const TemplateForm = ({
 		<div className='w-full max-w-[800px] mx-auto space-y-4'>
 			<ContentCard type='info'>
 				<h1 className='text-2xl font-barlow font-bold'>{title}</h1>
-				<p className='text-gray-600'>{description}</p>
+				<p className='text-muted-foreground'>{description}</p>
 
 				<div className='mt-3 flex items-center justify-between'>
 					{currentUser && status === 'authenticated' ? (
@@ -183,7 +183,7 @@ const TemplateForm = ({
 			</ContentCard>
 
 			{questions.length === 0 && (
-				<p className='text-gray-500'>{t('noQuestions')}</p>
+				<p className='text-muted-foreground'>{t('noQuestions')}</p>
 			)}
 
 			<Form {...form}>

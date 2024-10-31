@@ -61,7 +61,7 @@ const ViewTemplatePage = async ({ params }: { params: { id: string } }) => {
 							<Link
 								href={`/templates/manage/${params.id}`}
 								className='flex gap-2 items-center'>
-								<Crown className='w-5 text-gray-500' />
+								<Crown className='w-5 text-muted-foreground' />
 								{t('mangeButton')}
 							</Link>
 						</Button>
@@ -99,7 +99,7 @@ const ViewTemplatePage = async ({ params }: { params: { id: string } }) => {
 									</span>
 								))
 							) : (
-								<p className='text-sm text-gray-500'>{t('noTags')}</p>
+								<p className='text-sm text-muted-foreground'>{t('noTags')}</p>
 							)}
 						</div>
 					</div>

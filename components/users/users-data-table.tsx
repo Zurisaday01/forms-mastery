@@ -170,7 +170,7 @@ export function UserDataTable<TData, TValue>({
 							</span>
 						</p>
 						<span className='flex w-max items-center gap-1'>
-							<span className='text-gray-500'>|</span> {t('goTo')}{' '}
+							<span className='text-muted-foreground'>|</span> {t('goTo')}{' '}
 							<Input
 								type='number'
 								min='1'

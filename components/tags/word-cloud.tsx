@@ -7,6 +7,7 @@ import { scaleLog } from '@visx/scale';
 import Wordcloud from '@visx/wordcloud/lib/Wordcloud';
 import { ScaleLogarithmic } from '@visx/vendor/d3-scale';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useTheme } from 'next-themes';
 
 interface ExampleProps {
 	width: number;
@@ -25,7 +26,6 @@ function getRotationDegree() {
 const fontSizeSetter =
 	(fontScale: ScaleLogarithmic<number, number, never>) => (datum: WordData) => {
 		const size = fontScale(datum.value);
-		console.log(`Value: ${datum.value}, Size: ${size}`); // Debugging line
 		return size;
 	};
 
@@ -42,8 +42,10 @@ export default function WordCloud({
 }: ExampleProps) {
 	const [spiralType, setSpiralType] = useState<SpiralType>('archimedean');
 	const [withRotation, setWithRotation] = useState(false);
+	const [systemTheme, setSystemTheme] = useState<'dark' | 'light'>('light'); // Default to light
 	const router = useRouter();
 	const searchParams = useSearchParams();
+	const { theme } = useTheme();
 
 	const [selectedTag, setSelectedTag] = useState(
 		searchParams.get('tag') || null
@@ -52,6 +54,24 @@ export default function WordCloud({
 	useEffect(() => {
 		setSelectedTag(searchParams.get('tag'));
 	}, [searchParams, selectedTag]);
+
+	// know the system theme
+	useEffect(() => {
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+		const updateSystemTheme = (e: MediaQueryList | MediaQueryListEvent) => {
+			setSystemTheme(e.matches ? 'dark' : 'light');
+		};
+
+		// Set initial theme on mount
+		updateSystemTheme(mediaQuery);
+
+		// Add event listener
+		mediaQuery.addEventListener('change', updateSystemTheme);
+
+		// Cleanup listener on unmount
+		return () => mediaQuery.removeEventListener('change', updateSystemTheme);
+	}, []);
 
 	const minTagValue = Math.min(
 		...tags
@@ -72,6 +92,8 @@ export default function WordCloud({
 		domain: [safeMin, safeMax],
 		range: [10, 100],
 	});
+
+	console.log('theme', theme, 'systemTheme', systemTheme);
 
 	const handleSelectTag = (tag: string) => {
 		setSelectedTag(tag);
@@ -97,7 +119,14 @@ export default function WordCloud({
 							className='cursor-pointer'
 							onClick={() => handleSelectTag(w.text as string)}
 							key={w.text}
-							fill={selectedTag === w.text ? '#50A1FF' : '#343434'}
+							fill={
+								selectedTag === w.text
+									? '#50A1FF'
+									: theme === 'dark' ||
+									  (theme === 'system' && systemTheme === 'dark')
+									? '#fff'
+									: '#343434'
+							}
 							textAnchor={'middle'}
 							transform={`translate(${w.x}, ${w.y}) rotate(${w.rotate})`}
 							fontSize={w.size}

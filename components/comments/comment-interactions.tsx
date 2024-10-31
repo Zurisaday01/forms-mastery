@@ -102,8 +102,8 @@ const CommentInteractions = ({
 				onClick={handleLike}
 				className={`cursor-pointer flex justify-center items-center gap-1 px-2 p-1 ${
 					isLikedByCurrentUser
-						? 'text-blue-500 bg-blue-100/50 hover:bg-blue-100/30 hover:text-blue-400'
-						: 'text-gray-500 hover:text-gray-400'
+						? 'text-blue-500 bg-blue-100/50 dark:bg-blue-100/35 hover:bg-blue-100/30 hover:text-blue-400'
+						: 'text-muted-foreground hover:text-gray-400'
 				}`}>
 				{isTogglingLike || isLikesLoading || status === 'loading' ? (
 					<Loader2 size={20} className='animate-spin' />
@@ -122,8 +122,8 @@ const CommentInteractions = ({
 				onClick={handleDislike}
 				className={`cursor-pointer flex justify-center items-center gap-1 px-2 p-1 ${
 					isDislikedByCurrentUser
-						? 'text-blue-500 bg-blue-100/50 hover:bg-blue-100/30 hover:text-blue-400'
-						: 'text-gray-500 hover:text-gray-400'
+						? 'text-blue-500 bg-blue-100/50 dark:bg-blue-100/35 hover:bg-blue-100/30 hover:text-blue-400'
+						: 'text-muted-foreground hover:text-gray-400'
 				}`}>
 				{isTogglingDislike || isDislikesLoading || status === 'loading' ? (
 					<Loader2 size={20} className='animate-spin' />
